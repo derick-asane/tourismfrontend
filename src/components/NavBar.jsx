@@ -35,6 +35,7 @@ import {
   Star,
   HouseIcon,
   Building,
+  RocketIcon,
 } from "lucide-react";
 
 import { useAuth } from "../services/AuthProvider";
@@ -57,6 +58,12 @@ const navigationConfig = {
       name: "Events",
       href: "/tourist/tourist-event",
       icon: Calculator,
+      current: false,
+    },
+    {
+      name: "ask AI",
+      href: "/tourist/tourist-ai",
+      icon: RocketIcon,
       current: false,
     },
     { name: "My Agents", href: "/agents", icon: Users, current: false },

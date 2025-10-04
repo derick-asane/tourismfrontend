@@ -12,8 +12,9 @@ import TouristHome from "./pages/tourist/TouristHome";
 import TouristicSite from "./pages/tourist/TouristicSites";
 import AdminSiteTouristicSite from "./pages/siteadmin/SiteAdminTouristicSite";
 import SiteAdminEvent from "./pages/siteadmin/SiteAdminEvent";
-import TourGuideEvent from "./pages/tourguide/TourGuideEvent"
-import TouristEventPage from "./pages/tourist/TouristEventPage"
+import TourGuideEvent from "./pages/tourguide/TourGuideEvent";
+import TouristEventPage from "./pages/tourist/TouristEventPage";
+import AIDiagnosis from "./pages/tourist/AIDiagnosis";
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
         path: "tourist-event",
         element: <TouristEventPage />,
       },
+      {
+        path: "tourist-ai",
+        element: <AIDiagnosis />,
+      },
     ],
   },
   {
@@ -40,13 +45,11 @@ const routes = [
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "", 
-        element: <TourGuideDashboard />
-       },
-       {
-         path: "event",
-         element: <TourGuideEvent />
-       }
+      { path: "", element: <TourGuideDashboard /> },
+      {
+        path: "event",
+        element: <TourGuideEvent />,
+      },
     ],
   },
   {
@@ -55,8 +58,10 @@ const routes = [
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true, path: "dashboard", element: <AdminDashboard />
-       }
+        index: true,
+        path: "dashboard",
+        element: <AdminDashboard />,
+      },
     ],
   },
   {
@@ -64,7 +69,7 @@ const routes = [
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {index:true, path: "mysite", element: <AdminSiteTouristicSite /> },
+      { index: true, path: "mysite", element: <AdminSiteTouristicSite /> },
       { path: "event", element: <SiteAdminEvent /> },
     ],
   },
